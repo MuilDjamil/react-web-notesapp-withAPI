@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+  --background-color: #fff;
+  --font-color: #3A3B3C;
+}
+
+[data-theme='dark'] {
+  --background-color: #3A3B3C;
+  --font-color: #fff;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--font-color);
+  background-color: var(--background-color);
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  cursor: pointer;
+  color: var(--font-color);
+  background-color: var(--background-color);
+  outline: 1px solid var(--font-color);
+  border: none;
+}
+
+a {
+  color: var(--font-color);
+}
+
+input {
+  border: 1px solid var(--font-color);
+}
+
+/* Loading */
+.lds-ring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.lds-ring.content {
+  height: 100%;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid var(--font-color);
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: var(--font-color) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* --------------------------- */
+
+.notes-app-front__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 140px);
+}
+
+.notes-app-front form {
+  border: 2px solid var(--font-color);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.notes-app-front form input,
+.notes-app-front form button {
+  display: block;
+  margin: 10px 0;
+  width: 600px;
+  padding: 14px 8px;
+  border-radius: 4px;
+  font-size: 1.2rem;  
+} 
+
+.notes-app__header {
+  display: flex;
+  width: 100%;
+  padding: 0 30px;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid var(--font-color);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar > * {
+  margin: 0 10px;
+}
+
+.search-bar {
+  height: 60%;
+  width: 500px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.logout-button,
+.theme-switch,
+.locale-switch {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-size: 22px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.button-icon {
+  margin-right: 3px;
+}
+
+.sidenav {
+  float: left;
+  width: 18%;
+  padding: 20px 30px;
+}
+
+.sidenav ul {
+  list-style-type: none;
+}
+
+.sidenav li {
+  padding: 12px 0;
+}
+
+.sidenav__link {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+}
+
+.sidenav__link__icon {
+  font-size: 26px;
+  margin-right: 20px;
+}
+
+.notes-app__main {
+  float: right;
+  width: 82%;
+  overflow: scroll;
+  height: calc(100vh - 80px);
+  padding: 20px 10px;
+}
+
+.note-input {
+  border: 1px solid var(--font-color);
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 22px;
+}
+
+.note-input__title {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  padding: 5px;
+}
+
+.note-input__body {
+  width: 100%;
+  min-height: 20px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+
+.note-input__body[contentEditable="true"]:empty:before {
+  content: attr(placeholder);
+  color: rgb(107, 107, 107);
+}
+
+.note-input button {
+  display: block;
+  margin-left: auto;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+.note-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card {
+  border: 1px solid var(--font-color);
+  border-radius: 6px;
+  flex-basis: 24%;
+  padding: 8px;
+}
+
+.note-item__action {
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.note-item__action button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  padding: 4px 6px;
+  margin-right: 6px;
+  border-radius: 4px;
+  align-items: center;
+}
+
+.note-detail {
+  font-size: 1.4rem;
+}
+
+.note-detail__action {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+}
+
+.note-detail__action button {
+  font-size: 1.4rem;
+  padding: 12px;
+  margin-right: 12px;
+  border-radius: 18px;
+}
+
+.empty-list {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.not-found {
+  display: block;
+  margin: 0 auto;
+}
